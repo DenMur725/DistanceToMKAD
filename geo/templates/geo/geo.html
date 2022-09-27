@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <script src={{apisrc}}></script>
+    <script>
+        ymaps.ready(init);
+        function init(){
+            var suggestView = new ymaps.SuggestView('suggest');
+        }
+    </script>
+    <head>
+        <title>Distance to MKAD</title>
+    </head>
+    <body>
+        <h1>Find the distance to the MKAD</h1>
+        <form method="POST">
+            <input type="text" id="suggest" name="suggest" placeholder="Enter the address" value=""/>
+            <button type="submit" id="button">Find</button>
+        </form>
+        {% for msg in get_flashed_messages() %}
+        <div class="flash">{{msg}}</div>
+        {% endfor %}
+    </body>
+</html>
